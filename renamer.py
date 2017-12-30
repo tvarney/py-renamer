@@ -14,11 +14,11 @@ def rename_regexp(path: str, pattern_original: str, pattern_new: str) -> int:
 
 def rename_normal(path: str, pattern_original: str, pattern_new: str) -> int:
     renamed = 0
-    for fname in os.listdir(path):
-        nfname = fname.replace(pattern_original, pattern_new)
-        if nfname != fname:
+    for file_name in os.listdir(path):
+        new_file_name = file_name.replace(pattern_original, pattern_new)
+        if new_file_name != file_name:
             renamed += 1
-            os.rename(os.path.join(path, fname), os.path.join(path, nfname))
+            os.rename(os.path.join(path, file_name), os.path.join(path, new_file_name))
     return renamed
 
 
@@ -43,14 +43,14 @@ class Application(object):
     def _create_gui(self):
         pass
 
-    def _callback_Apply(self):
+    def _callback_apply(self):
         pass
 
-    def _callback_Browse(self):
+    def _callback_browse(self):
         pass
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     import sys
     app = Application()
     sys.exit(app.run())
